@@ -3,10 +3,16 @@
 :root {
   --padding-container: 100px 0;
   --color-title: #001a49;
+  --fs-600: 3rem;
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: var(--fs-600);
 }
 
 /* Utility */
@@ -19,13 +25,26 @@ body {
   padding: var(--padding-container);
 }
 
+.btn {
+  display: block;
+  text-decoration: none;
+  padding: 13px 30px;
+  justify-self: center;
+  border-radius: 2rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2091f9;
+}
+
 /* Header */
 
 .logo {
   max-width: 250px;
 }
 
-.hero {
+.header {
   display: grid;
   grid-template-rows: auto 1fr;
   height: 100vh;
@@ -35,7 +54,7 @@ body {
   color: #fff;
 }
 
-.hero::before {
+.header::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -92,35 +111,20 @@ body {
   display: var(--show, none);
 }
 
-/* Hero container */
+/* Hero contents */
 
-.hero__container {
-  max-width: 800px;
-  --padding-container: 0;
+.header__contents {
   display: grid;
-  grid-auto-rows: max-content;
   align-content: center;
   gap: 1em;
+  max-width: 800px;
+  --padding-container: 0;
   padding-bottom: 100px;
   text-align: center;
 }
 
-.hero__title {
-  font-size: 3rem;
-}
-
-.hero__paragraph {
+.header__text {
   margin-bottom: 20px;
-}
-
-.cta {
-  display: inline-block;
-  background-color: #2091f9;
-  justify-self: center;
-  color: #fff;
-  text-decoration: none;
-  padding: 13px 30px;
-  border-radius: 32px;
 }
 
 /* About */
