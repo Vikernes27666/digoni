@@ -33,7 +33,7 @@ h1 {
 .btn {
   display: block;
   text-decoration: none;
-  padding: 13px 30px;
+  padding: 0.8125em 1.875em;
   justify-self: center;
   border-radius: 2rem;
 }
