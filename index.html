@@ -17,29 +17,31 @@
 
   <body>
     <header class="header">
-      <nav class="nav container">
-        <div class="nav__logo">
-          <h2 class="nav__title"></h2>
-          <img
-            class="logo"
-            src="./assets/images/logo.png"
-            alt="Logo de Servicios Logistic Digoni S.A.C."
-          />
-        </div>
-        <ul class="nav__link nav__link--menu">
-          <li class="nav__items">
+      <nav class="header-nav container">
+        <img
+          class="header-nav__logo"
+          src="./assets/images/logo.png"
+          alt="Logo de Servicios Logistic Digoni S.A.C."
+        />
+        <ul class="header-nav__links nav__link--menu" role="list">
+          <li class="header-nav__item hover-underline-effect">
             <a
               href="https://www.facebook.com/profile.php?id=100087977448428"
-              class="nav__links"
+              class="header-nav__link"
               >Facebook</a
             >
           </li>
-          <img src="./assets/icons/close.svg" class="nav__close" />
+          <button class="header-nav__close-btn">
+            <img aria-hidden="true" src="./assets/icons/close.svg" />
+          </button>
         </ul>
 
-        <div class="nav__menu">
-          <img src="./assets/icons/hamb-menu.svg" class="nav__img" />
-        </div>
+        <button class="header-nav__hamb-menu" aria-expanded="false">
+          <img
+            src="./assets/icons/hamb-menu.svg"
+            class="header-nav__hamb-menu--img"
+          />
+        </button>
       </nav>
 
       <section class="header__contents container">
@@ -389,14 +391,14 @@
         </details>
       </section>
 
-      <section class="container cta">
+      <section class="cta container">
         <h2 class="cta__title section-title">
-          ¿Estás listo para obtener nuestros servicios?
+          ¿Estás listo para contratar nuestros servicios?
         </h2>
         <p class="cta__text">
           Nuestros servicios aseguran la máxima seguridad y protección de tus
-          productos durante todo el proceso de transporte. Puedes confiar en
-          nosotros para cuidar tus mercancías con responsabilidad y
+          productos durante todo el proceso de transporte. Puedes confiar en que
+          nosotros cuidaremos tus mercancías con responsabilidad y
           profesionalismo.
         </p>
         <a
@@ -413,18 +415,18 @@
           <h2 class="footer__title">Servicios Logistic Digoni.</h2>
 
           <ul class="nav__link nav__link--footer">
-            <li class="nav__items">
+            <li class="hover-underline-effect">
               <a href="#" class="nav__links"
                 >serviceslogisticdigoni@gmail.com</a
               >
             </li>
-            <li class="nav__items">
+            <li class="hover-underline-effect">
               <a href="#" class="nav__links">ddiazluna@gmail.com</a>
             </li>
-            <li class="nav__items">
+            <li class="hover-underline-effect">
               <a href="#" class="nav__links">+51 960 396 539</a>
             </li>
-            <li class="nav__items">
+            <li class="hover-underline-effect">
               <a href="#" class="nav__links"></a>
             </li>
           </ul>

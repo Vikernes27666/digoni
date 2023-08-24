@@ -1,13 +1,15 @@
 (function () {
-  const menu = document.querySelector(".nav__link");
-  const openButton = document.querySelector(".nav__menu");
-  const closeMenu = document.querySelector(".nav__close");
+  const headerMenu = document.querySelector(".header-nav__links");
+  const hambMenuBtn = document.querySelector(".header-nav__hamb-menu");
+  const closeMenuBtn = document.querySelector(".header-nav__close-btn");
 
-  openButton.addEventListener("click", () => {
-    menu.classList.add("nav__link--show");
+  hambMenuBtn.addEventListener("click", () => {
+    headerMenu.classList.add("header-nav__links--show");
+    hambMenuBtn.setAttribute("aria-expanded", "true");
   });
 
-  closeMenu.addEventListener("click", () => {
-    menu.classList.remove("nav__link--show");
+  closeMenuBtn.addEventListener("click", () => {
+    headerMenu.classList.remove("header-nav__links--show");
+    hambMenuBtn.setAttribute("aria-expanded", "false");
   });
 })();
