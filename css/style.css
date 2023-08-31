@@ -194,7 +194,7 @@ h1 {
 .modalities {
   display: grid; /* Cambiado a grid */
   grid-template-columns: repeat(
-    3,
+    2,
     1fr
   ); /* Distribución de columnas para los 3 elementos */
   width: 90%;
