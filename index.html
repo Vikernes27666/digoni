@@ -10,6 +10,10 @@
       href="./assets/icons/favicon.png"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <meta name="theme-color" content="#2091F9" />
@@ -384,36 +388,40 @@
       </section>
     </main>
 
-    <section class="form_wrap">
-      <section class="cantact_info">
-          <section class="info_title">
-              <span class="fa fa-user-circle"></span>
-              <h2>INFORMACION<br>DE CONTACTO</h2>
-          </section>
-          <section class="info_items">
-              <p><span class="fa fa-envelope"></span> serviceslogisticdigoni@gmail.com</p>
-              <p><span class="fa fa-mobile"></span> +51 960 396 539</p>
-          </section>
+    <article class="form-wrap">
+      <section class="contact-info">
+        <div class="info-title">
+          <span class="fa fa-user-circle"></span>
+          <h2>INFORMACION<br />DE CONTACTO</h2>
+        </div>
+        <p>
+          <span class="fa fa-envelope"></span> serviceslogisticdigoni@gmail.com
+        </p>
+        <p><span class="fa fa-mobile"></span> +51 960 396 539</p>
       </section>
-      <section class="form_contact">
-          <h2>Envía un mensaje</h2>
-          <div class="user_info">
-              <label for="names">Nombres *</label>
-              <input type="text" id="names">
-  
-              <label for="phone">Teléfono / Celular</label>
-              <input type="text" id="phone">
-  
-              <label for="email">Correo electrónico *</label>
-              <input type="text" id="email">
-  
-              <label for="mensaje">Mensaje *</label>
-              <textarea id="mensaje"></textarea>
-  
-              <input type="button" value="Enviar Mensaje" id="btnSend">
-          </div>
+      <section class="form-contact">
+        <h3 class="form-contact__title">Envía un mensaje</h3>
+        <form class="user-info">
+          <label for="names">Nombres *</label>
+          <input type="text" id="names" required />
+
+          <label for="phone">Teléfono / Celular</label>
+          <input type="tel" id="phone" required />
+
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" required />
+
+          <label for="mensaje">Mensaje *</label>
+          <textarea
+            class="form-contact__textarea"
+            id="mensaje"
+            required
+          ></textarea>
+
+          <input type="submit" value="Enviar Mensaje" id="btnSend" />
+        </form>
       </section>
-  </section>
+    </article>
 
     <footer class="footer">
       <div class="container">
