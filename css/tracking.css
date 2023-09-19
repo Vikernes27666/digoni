@@ -1,0 +1,57 @@
+body {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Quotation */
+
+.quotation {
+  max-width: 600px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #007bff;
+}
+
+.quotation__title {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Quotation form */
+
+.quotation-form__label {
+  color: #fff;
+  display: block;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.quotation-form input[type="number"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #fff;
+  margin-bottom: 20px;
+  width: 100%;
+  color: #444;
+}
+
+.quotation-form__submit {
+  border: none;
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.quotation-form__submit:hover {
+  background-color: #d4e6ff;
+}
