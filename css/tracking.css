@@ -3,9 +3,9 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Quotation */
+/* Tracking */
 
-.quotation {
+.tracking {
   max-width: 600px;
   width: 100%;
   margin-inline: auto;
@@ -16,21 +16,21 @@ body {
   background-color: #007bff;
 }
 
-.quotation__title {
+.tracking__title {
   margin-bottom: 20px;
   color: #fff;
 }
 
-/* Quotation form */
+/* Tracking form */
 
-.quotation-form__label {
+.tracking-form__label {
   color: #fff;
   display: block;
   margin-bottom: 10px;
   text-align: left;
 }
 
-.quotation-form input[type="number"] {
+.tracking-form input[type="number"] {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #fff;
@@ -39,7 +39,7 @@ body {
   color: #444;
 }
 
-.quotation-form__submit {
+.tracking-form__submit {
   border: none;
   display: block;
   width: 100%;
@@ -52,6 +52,6 @@ body {
   cursor: pointer;
 }
 
-.quotation-form__submit:hover {
+.tracking-form__submit:hover {
   background-color: #d4e6ff;
 }
