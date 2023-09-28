@@ -19,6 +19,6 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
 $router = new Router();
 
-$router->get('/digoni/', 'src/views/index.php');
+$router->get('/digoni/', 'src/views/index.html');
 
 $router->route($uri, $method);
