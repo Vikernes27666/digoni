@@ -1,37 +1,44 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digoni | Tracking</title>
-  <link rel="stylesheet" href="../css/normalize.css">
-  <link rel="stylesheet" href="../css/tracking.css">
-  <link rel="stylesheet" href="../css/trackingmodal.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digoni | Tracking</title>
+    <link rel="stylesheet" href="/digoni/css/normalize.css" />
+    <link rel="stylesheet" href="/digoni/css/tracking.css" />
+    <link rel="stylesheet" href="/digoni/css/trackingmodal.css" />
+  </head>
+  <body>
+    <article class="tracking">
+      <h2 class="tracking__title">REALIZA TU SEGUIMIENTO</h2>
+      <form
+        class="tracking-form"
+        id="tracking-form"
+        action="/digoni/tracking-status/"
+        method="POST"
+      >
+        <label class="tracking-form__label" for="tracking-number"
+          >N° de Tracking</label
+        >
+        <input
+          type="number"
+          id="tracking-number"
+          name="tracking-number"
+          placeholder="Número de tracking"
+        />
+        <button class="tracking-form__submit" type="submit" id="show-modal">
+          Enviar
+        </button>
+      </form>
+    </article>
 
-</head>
-<body>
-  <article class="tracking">
-    <h2 class="tracking__title">REALIZA TU SEGUIMIENTO</h2>
-    <form class="tracking-form">
-      <label class="tracking-form__label" for="tracking-number">N° de Tracking</label>
-      <input
-        type="number"
-        id="tracking-number"
-        name="tracking-number"
-        placeholder="Número de tracking"
-      />
-      <button class="tracking-form__submit" type="button" id="show-modal">Enviar</button>
-    </form>
-  </article>
-
-  <!-- Ventana modal -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <div id="modal-data">
+    <!-- Ventana modal -->
+    <div id="info-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close-info-modal">&times;</span>
+        <div id="modal-data"></div>
       </div>
     </div>
-  </div>
-  <script src="../js/tracking.js"></script>
-</body>
+    <script src="/digoni/js/tracking.js"></script>
+  </body>
 </html>

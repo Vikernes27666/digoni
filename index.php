@@ -6,6 +6,11 @@ const BASE_PATH = __DIR__;
 
 require BASE_PATH . '/Router.php';
 
+require BASE_PATH . '/src/services/MainService.php';
+require BASE_PATH . '/src/services/TrackingService.php';
+
+require BASE_PATH . '/src/controllers/TrackingController.php';
+
 set_error_handler(function(int $errno, string $errstr) {
   if ((!str_contains($errstr, 'Undefined array key')) && (!str_contains($errstr, 'Undefined variable'))) {
       return false;
@@ -17,11 +22,16 @@ set_error_handler(function(int $errno, string $errstr) {
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
+$db = new PDO('mysql:host=localhost;dbname=digoni', 'root');
+
+$tracking_service = new TrackingService($db);
+$tracking_controller = new TrackingController($tracking_service);
+
 $router = new Router();
 
 $router->get('/digoni/', 'src/views/index.html');
-$router->get('/digoni/tracking/', 'src/views/tracking.html');
+$router->get('/digoni/tracking/', [$tracking_controller, 'index']);
 
+$router->post('/digoni/tracking-status/', [$tracking_controller, 'query_tracking_status']);
 
 $router->route($uri, $method);
-
