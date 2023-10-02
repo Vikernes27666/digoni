@@ -6,4 +6,4 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule !.(css|js|jpg|png)$ index.php [L,QSA]
 
-</IfModule>
+</IfModule>   
