@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Digoni | Cotizador</title>
-    <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/quotation.css" />
+    <link rel="stylesheet" href="/digoni/css/normalize.css" />
+    <link rel="stylesheet" href="/digoni/css/quotation.css" />
   </head>
   <body>
     <header class="header">
@@ -27,63 +27,123 @@
     <main>
       <h1>COTIZADOR AUTOMATICO</h1>
       <form action="" method="POST" class="quotation-form" id="quotation-form">
-        <div class="ubicacion" id="frm-origen">
+        <fieldset class="ubicacion" id="frm-origen">
           <label class="quotation-form__label" for="origen"
             >¿DÓNDE TE ENCUENTRAS?</label
           >
           <select name="origen" id="origen">
             <option value="" selected>Origen</option>
-            <option value="1" selected>Puente Piedra</option>
-            <option value="1" selected>Los Olivos</option>
-            <option value="1" selected>Comas</option>
-            <option value="1" selected>Carabayllo</option>
-            <option value="1" selected>Callao</option>
-            <option value="1" selected>San Martín de Porres</option>
+            <option value="1">Puente Piedra</option>
+            <option value="2">Los Olivos</option>
+            <option value="3">Comas</option>
+            <option value="4">Carabayllo</option>
+            <option value="5">Callao</option>
+            <option value="6">San Martín de Porres</option>
           </select>
-        </div>
+        </fieldset>
 
-        <div class="ubicacion" id="frm-destino">
+        <fieldset class="ubicacion" id="frm-destino">
           <label class="quotation-form__label" for="destino"
             >¿A DÓNDE LO LLEVAMOS?</label
           >
           <select name="destino" id="destino">
             <option value="" selected>Destino</option>
-            <option value="1" selected>Lima / Conococha</option>
-            <option value="2" selected>Lima / Catac</option>
-            <option value="3" selected>Lima / Recuay</option>
-            <option value="4" selected>Lima / Chavín</option>
-            <option value="5" selected>Lima / San Marcos</option>
-            <option value="6" selected>Lima / Huari</option>
-            <option value="7" selected>Lima / Anra</option>
-            <option value="8" selected>Lima / Uco</option>
-            <option value="9" selected>Sur / Ica / Pisco</option>
-            <option value="10" selected>Sur / Nazca</option>
-            <option value="11" selected>Sur / Marcona</option>
-            <option value="12" selected>Selva Central / Oroya</option>
-            <option value="13" selected>Selva Central / Tarma</option>
-            <option value="14" selected>Selva Central / La Merced</option>
-            <option value="15" selected>Selva Central / Satipo</option>
-            <option value="16" selected>Selva Central / Mazamari</option>
-            <option value="17" selected>
-              Selva Central / San Martín de Pangoa
-            </option>
+            <option value="1">Lima / Conococha</option>
+            <option value="2">Lima / Catac</option>
+            <option value="3">Lima / Recuay</option>
+            <option value="4">Lima / Chavín</option>
+            <option value="5">Lima / San Marcos</option>
+            <option value="6">Lima / Huari</option>
+            <option value="7">Lima / Anra</option>
+            <option value="8">Lima / Uco</option>
+            <option value="9">Sur / Ica / Pisco</option>
+            <option value="10">Sur / Nazca</option>
+            <option value="11">Sur / Marcona</option>
+            <option value="12">Selva Central / Oroya</option>
+            <option value="13">Selva Central / Tarma</option>
+            <option value="14">Selva Central / La Merced</option>
+            <option value="15">Selva Central / Satipo</option>
+            <option value="16">Selva Central / Mazamari</option>
+            <option value="17">Selva Central / San Martín de Pangoa</option>
           </select>
-        </div>
+        </fieldset>
 
-        <div class="envio" id="frm-envio">
+        <fieldset class="envio hidden" id="frm-envio">
           <h2 class="quotation-form__title">¿QUÉ QUIERES ENVIAR?</h2>
-          <label for="recojo-domicilio">Recojo a domicilio</label>
+
+          <div class="payload-types">
+            <div class="payload-type" data-cost="8">
+              <h3>Sobre</h3>
+              <p>Documentos</p>
+            </div>
+            <div class="payload-type" data-cost="8">
+              <h3>Paquete XXS</h3>
+              <p class="payload-type__measure">15 x 10 x 10 cm</p>
+              <p class="payload-type__max-weight">Peso máx 250 g.</p>
+            </div>
+            <div class="payload-type" data-cost="10">
+              <h3>Paquete XS</h3>
+              <p class="payload-type__measure">
+                15 x 20 x 10 cm ó 32 x 4 x 26 cm
+              </p>
+              <p class="payload-type__max-weight">Peso máx 500 g.</p>
+            </div>
+            <div class="payload-type" data-cost="12">
+              <h3>Paquete S</h3>
+              <p class="payload-type__measure">20 x 30 x 12 cm</p>
+              <p class="payload-type__max-weight">Peso máx 2 kg.</p>
+            </div>
+            <div class="payload-type" data-cost="16">
+              <h3>Paquete M</h3>
+              <p class="payload-type__measure">24 x 30 x 20 cm</p>
+              <p class="payload-type__max-weight">Peso máx 5 kg.</p>
+            </div>
+            <div class="payload-type" data-cost="25">
+              <h3>Paquete L</h3>
+              <p class="payload-type__measure">42 x 30 x 23 cm</p>
+              <p class="payload-type__max-weight">Peso máx 10 kg.</p>
+            </div>
+          </div>
+
+          <label class="quotation-form__label--recojo" for="recojo-domicilio"
+            >Recojo a domicilio (+15 PEN)</label
+          >
           <input
             type="checkbox"
             name="recojo-domicilio"
             id="recojo-domicilio"
           />
-          <div class="payload-types">
-            <div class="payload-type"></div>
-            <div class="payload-type"></div>
-            <div class="payload-type"></div>
+        </fieldset>
+
+        <fieldset class="order-detail hidden" id="frm-detalle-envio">
+          <div class="order-detail__controls">
+            <h3 class="order-detail__title" id="order-detail-title">
+              Paquete M
+            </h3>
+            <button
+              type="button"
+              class="order-detail__close-btn"
+              id="close-detail"
+            >
+              x
+            </button>
           </div>
-        </div>
+          <div class="order-detail__content">
+            <h4 class="order-detail__cost">
+              Costo: S/. <span id="order-detail-cost">5</span>.00
+            </h4>
+            <p class="order-deailt__measurement" id="order-detail-measurement">
+              24 x 30 x 20 cm
+            </p>
+            <label
+              for="quantity"
+              class="quotation-form__label quotation-form__label--quantity"
+              >Cantidad</label
+            >
+            <input type="number" id="quantity" />
+          </div>
+        </fieldset>
+
         <button
           type="submit"
           class="quotation-form__submit-btn"
@@ -91,35 +151,15 @@
         >
           COTIZAR
         </button>
-        <div class="especificacion" id="frm-especificacion">
-          <!-- Here, the specifications for the selected option above -->
-        </div>
       </form>
-
-      <section id="quotation-result" hidden>
-        <h2>Resultados</h2>
-        <div class="resultado">
-          <p>Precio Estimado:</p>
-          <p id="precio"></p>
-        </div>
-        <button
-          form="quotation-form"
-          type="reset"
-          class="quotation-form__reset-btn"
-          id="reset-button"
-          onclick="reiniciarCalculadora()"
-        >
-          Calcular de nuevo
-        </button>
+      <section id="quotation-result-box" class="quotation-result hidden">
+        <h1>Resultado: S/. <span id="quotation-result">50</span>.00</h1>
+        <p>
+          ℹ️ Los resultados obtenidos son referenciales. Si desea realizar una
+          cotización real con nosotros, <a href="">contáctenos</a>.
+        </p>
       </section>
-      <!-- 
-        <label for="tipo-envio">¿LO RECOGEMOS?</label>
-          <select name="tipo-envio" id="tipo-envio">
-            <option value="0">No</option>
-            <option value="1">Sí</option>
-          </select>
-       -->
     </main>
-    <script src="js/quotation.js"></script>
+    <script src="/digoni/js/quotation.js"></script>
   </body>
 </html>

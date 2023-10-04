@@ -1,10 +1,19 @@
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
 /* Estilos para el cuerpo */
 body {
   background-color: #007bff;
   font-family: Arial, Helvetica, sans-serif;
-  color: #fff;
   margin: 0;
   padding: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Estilos para el encabezado */
@@ -40,6 +49,10 @@ h1 {
   margin-bottom: 2rem;
 }
 
+.quotation-form > * + * {
+  margin-top: 1.5rem;
+}
+
 .quotation-form {
   width: 1400px;
   max-width: 90%;
@@ -58,9 +71,23 @@ h1 {
   color: #0056b3;
 }
 
+.quotation-form__label--recojo {
+  display: inline-block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #0056b3;
+}
+
 .quotation-form__title {
   font-size: 1rem;
   color: #0056b3;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  aspect-ratio: 1 /1;
 }
 
 select,
@@ -73,9 +100,14 @@ input[type="text"] {
   font-size: 1rem;
 }
 
+.quotation-form__submit-btn {
+  display: block;
+  width: 100%;
+}
+
 .quotation-form__submit-btn,
 .quotation-form__reset-btn {
-  background-color: #0056b3;
+  background-color: hsl(211, 100%, 35%);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -91,19 +123,31 @@ input[type="text"] {
   margin-top: 0.5rem;
 }
 
-/* Estilos para los resultados */
-#resultados {
-  padding-top: 2rem;
+.payload-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.resultado {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 0.5rem;
+.payload-type {
+  padding-block: 1rem;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: box-shadow 300ms ease;
+  cursor: pointer;
 }
 
-.resultado p {
-  font-weight: bold;
+.payload-type:hover {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 20px 0px;
+}
+
+.payload-type__measure {
+  color: hsl(0, 0%, 45%);
+}
+
+.payload-type__max-weight {
+  color: hsl(218, 54%, 20%);
 }
 
 /* Cambios en los selectores para los campos de Departamento, Provincia y Distrito en Perú */
@@ -117,4 +161,68 @@ select[name$="-distrito"] {
   margin-bottom: 1rem;
   font-size: 1rem;
   width: 100%; /* Ancho del 100% */
+}
+
+.order-detail {
+  width: 700px;
+  max-width: 90%;
+
+  margin-inline: auto;
+}
+
+.order-detail > * + * {
+  margin-top: 1.5rem;
+}
+
+.order-detail__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.278);
+}
+
+.order-detail__title {
+  text-transform: uppercase;
+  color: hsl(211, 100%, 35%);
+}
+
+.order-detail__close-btn {
+  border: none;
+  width: 2.15rem;
+  aspect-ratio: 1 / 1;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: hsl(211, 100%, 35%);
+  color: white;
+  cursor: pointer;
+}
+
+.order-detail__content {
+  text-align: left;
+}
+
+.order-detail__cost {
+  font-size: 1.5rem;
+}
+
+.quotation-form__label--quantity {
+  display: inline-block;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.quotation-result {
+  width: 1400px;
+  max-width: 90%;
+  padding: 2rem;
+  margin-top: 1.5rem;
+  margin-inline: auto;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.quotation-result h1 {
+  font-size: 3rem;
+  margin: 0;
 }
