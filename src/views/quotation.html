@@ -8,95 +8,118 @@
     <link rel="stylesheet" href="./css/quotation.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Cotizador</a></li>
-          <li><a href="#">Tracking</a></li>
+    <header class="header">
+      <nav class="header-nav">
+        <ul class="header-links">
+          <li class="header-item">
+            <a class="header-link" href="#">Inicio</a>
+          </li>
+          <li class="header-item">
+            <a class="header-link" href="#">Cotizador</a>
+          </li>
+          <li class="header-item">
+            <a class="header-link" href="#">Tracking</a>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
       <h1>COTIZADOR AUTOMATICO</h1>
-      <section>
-        <div class="ubicacion">
-          <label for="origen-departamento">¿DÓNDE TE ENCUENTRAS?</label>
-          <select name="origen-departamento" id="origen-departamento">
-            <option value="" selected>Departamento</option>
-            <!-- Opciones para departamentos aquí -->
-          </select>
-          <select name="origen-provincia" id="origen-provincia">
-            <option value="" selected>Provincia</option>
-            <!-- Opciones para provincias aquí -->
-          </select>
-          <select name="origen-distrito" id="origen-distrito">
-            <option value="" selected>Distrito</option>
-            <!-- Opciones para distritos aquí -->
-          </select>
-        </div>
-
-        <div class="ubicacion">
-          <label for="destino-departamento">¿A DÓNDE LO LLEVAMOS?</label>
-          <select name="destino-departamento" id="destino-departamento">
-            <option value="" selected>Departamento</option>
-            <!-- Opciones para departamentos aquí -->
-          </select>
-          <select name="destino-provincia" id="destino-provincia">
-            <option value="" selected>Provincia</option>
-            <!-- Opciones para provincias aquí -->
-          </select>
-          <select name="destino-distrito" id="destino-distrito">
-            <option value="" selected>Distrito</option>
-            <!-- Opciones para distritos aquí -->
+      <form action="" method="POST" class="quotation-form" id="quotation-form">
+        <div class="ubicacion" id="frm-origen">
+          <label class="quotation-form__label" for="origen"
+            >¿DÓNDE TE ENCUENTRAS?</label
+          >
+          <select name="origen" id="origen">
+            <option value="" selected>Origen</option>
+            <option value="1" selected>Puente Piedra</option>
+            <option value="1" selected>Los Olivos</option>
+            <option value="1" selected>Comas</option>
+            <option value="1" selected>Carabayllo</option>
+            <option value="1" selected>Callao</option>
+            <option value="1" selected>San Martín de Porres</option>
           </select>
         </div>
 
-        <div class="envio">
-          <label for="tipo-envio">¿LO RECOGEMOS?</label>
-          <select name="tipo-envio" id="tipo-envio">
-            <option value="0">No</option>
-            <option value="1">Sí</option>
+        <div class="ubicacion" id="frm-destino">
+          <label class="quotation-form__label" for="destino"
+            >¿A DÓNDE LO LLEVAMOS?</label
+          >
+          <select name="destino" id="destino">
+            <option value="" selected>Destino</option>
+            <option value="1" selected>Lima / Conococha</option>
+            <option value="2" selected>Lima / Catac</option>
+            <option value="3" selected>Lima / Recuay</option>
+            <option value="4" selected>Lima / Chavín</option>
+            <option value="5" selected>Lima / San Marcos</option>
+            <option value="6" selected>Lima / Huari</option>
+            <option value="7" selected>Lima / Anra</option>
+            <option value="8" selected>Lima / Uco</option>
+            <option value="9" selected>Sur / Ica / Pisco</option>
+            <option value="10" selected>Sur / Nazca</option>
+            <option value="11" selected>Sur / Marcona</option>
+            <option value="12" selected>Selva Central / Oroya</option>
+            <option value="13" selected>Selva Central / Tarma</option>
+            <option value="14" selected>Selva Central / La Merced</option>
+            <option value="15" selected>Selva Central / Satipo</option>
+            <option value="16" selected>Selva Central / Mazamari</option>
+            <option value="17" selected>
+              Selva Central / San Martín de Pangoa
+            </option>
           </select>
-          <label for="envio-tipo">¿QUÉ QUIERES ENVIAR?</label>
-          <select name="envio-tipo" id="envio-tipo">
-            <option value="0">Sobres</option>
-            <option value="1">Paquetes</option>
-          </select>
-          <label for="envio-peso">¿CUÁNTO PESA?<br />(kg)</label>
-          <input type="text" id="envio-peso" name="envio-peso" />
-
-          <label for="envio-dimensiones">ESPECIFICACIONES DEL PRODUCTO:</label>
-          <textarea
-            id="envio-dimensiones"
-            name="envio-dimensiones"
-            rows="5"
-            placeholder="Por favor indique las especificaciones de su producto aquí (Dimensiones, peso, contenido, etc.)"
-          ></textarea>
-
-          <label for="envio-gran-carga">
-            ¿ES UNA GRAN CARGA QUE REQUIERE MANIPULACIÓN ESPECIAL?
-          </label>
-          <select name="envio-gran-carga" id="envio-gran-carga">
-            <option value="0">No</option>
-            <option value="1">Sí</option>
-          </select>
-
-          <button type="submit" onclick="calcularPrecio()">COTIZAR</button>
         </div>
-      </section>
 
-      <section id="resultados" hidden>
+        <div class="envio" id="frm-envio">
+          <h2 class="quotation-form__title">¿QUÉ QUIERES ENVIAR?</h2>
+          <label for="recojo-domicilio">Recojo a domicilio</label>
+          <input
+            type="checkbox"
+            name="recojo-domicilio"
+            id="recojo-domicilio"
+          />
+          <div class="payload-types">
+            <div class="payload-type"></div>
+            <div class="payload-type"></div>
+            <div class="payload-type"></div>
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="quotation-form__submit-btn"
+          id="quotation-submit"
+        >
+          COTIZAR
+        </button>
+        <div class="especificacion" id="frm-especificacion">
+          <!-- Here, the specifications for the selected option above -->
+        </div>
+      </form>
+
+      <section id="quotation-result" hidden>
         <h2>Resultados</h2>
         <div class="resultado">
           <p>Precio Estimado:</p>
           <p id="precio"></p>
         </div>
-        <button type="reset" id="reset-button" onclick="reiniciarCalculadora()">
+        <button
+          form="quotation-form"
+          type="reset"
+          class="quotation-form__reset-btn"
+          id="reset-button"
+          onclick="reiniciarCalculadora()"
+        >
           Calcular de nuevo
         </button>
       </section>
+      <!-- 
+        <label for="tipo-envio">¿LO RECOGEMOS?</label>
+          <select name="tipo-envio" id="tipo-envio">
+            <option value="0">No</option>
+            <option value="1">Sí</option>
+          </select>
+       -->
     </main>
+    <script src="js/quotation.js"></script>
   </body>
 </html>

@@ -8,23 +8,21 @@ body {
 }
 
 /* Estilos para el encabezado */
-header {
+.header {
   background-color: #0056b3;
   padding: 1rem;
 }
 
-nav ul {
+.header-links {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin-block: 0;
+  padding-left: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-nav li {
-  display: inline;
-  margin-right: 20px;
-}
-
-nav a {
+.header-link {
   color: #fff;
   text-decoration: none;
   font-weight: bold;
@@ -42,19 +40,26 @@ h1 {
   margin-bottom: 2rem;
 }
 
-section {
-  background-color: #fff;
+.quotation-form {
+  width: 1400px;
+  max-width: 90%;
+  padding: 2rem;
+  margin-inline: auto;
+  text-align: center;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
+  background-color: #fff;
 }
 
-label {
+.quotation-form__label {
   display: block;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: #0056b3;
+}
+
+.quotation-form__title {
+  font-size: 1rem;
   color: #0056b3;
 }
 
@@ -68,8 +73,8 @@ input[type="text"] {
   font-size: 1rem;
 }
 
-button[type="submit"],
-button[type="reset"] {
+.quotation-form__submit-btn,
+.quotation-form__reset-btn {
   background-color: #0056b3;
   color: #fff;
   border: none;
@@ -81,7 +86,7 @@ button[type="reset"] {
   margin-top: 1rem;
 }
 
-button[type="reset"] {
+.quotation-form__reset-btn {
   background-color: #ccc;
   margin-top: 0.5rem;
 }
