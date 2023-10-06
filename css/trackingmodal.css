@@ -32,3 +32,9 @@
 .close:hover {
   color: #fff;
 }
+
+/*Ocultar img */
+
+.hidden {
+  display: none;
+}

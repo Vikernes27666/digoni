@@ -22,7 +22,7 @@ set_error_handler(function(int $errno, string $errstr) {
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
-$db = new PDO('mysql:host=localhost:3307;dbname=digoni', 'root');
+$db = new PDO('mysql:host=localhost:3306;dbname=digoni', 'root');
 
 $tracking_service = new TrackingService($db);
 $tracking_controller = new TrackingController($tracking_service);
