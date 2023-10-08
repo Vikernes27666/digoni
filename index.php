@@ -10,6 +10,7 @@ require BASE_PATH . '/src/services/MainService.php';
 require BASE_PATH . '/src/services/TrackingService.php';
 
 require BASE_PATH . '/src/controllers/TrackingController.php';
+require BASE_PATH . '/src/controllers/QuotationController.php';
 
 set_error_handler(function(int $errno, string $errstr) {
   if ((!str_contains($errstr, 'Undefined array key')) && (!str_contains($errstr, 'Undefined variable'))) {
@@ -26,12 +27,13 @@ $db = new PDO('mysql:host=localhost:3306;dbname=digoni', 'root');
 
 $tracking_service = new TrackingService($db);
 $tracking_controller = new TrackingController($tracking_service);
+$quotation_controller = new QuotationController();
 
 $router = new Router();
 
 $router->get('/digoni/', 'src/views/index.html');
 $router->get('/digoni/tracking/', [$tracking_controller, 'index']);
-$router->get('/digoni/cotizacion/', 'src/views/quotation.html');
+$router->get('/digoni/cotizacion/', [$quotation_controller, 'index']);
 
 $router->post('/digoni/tracking-status/', [$tracking_controller, 'query_tracking_status']);
 
