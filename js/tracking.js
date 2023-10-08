@@ -39,8 +39,15 @@ $trackingForm.addEventListener("submit", (e) => {
 function showData(datos) {
   $infoModalData.innerHTML = datos;
   $infoModal.style.display = "block"; // Muestra el modal
-  const orderState = $infoModalData.querySelector("#estado-orden").textContent;
-  showImage(orderState);
+  const $orderStateSpan = $infoModalData.querySelector("#estado-orden");
+  const orderState = $orderStateSpan?.textContent;
+  if (orderState) {
+    showImage(orderState);
+  } else {
+    $imgEnAlmacen.classList.add("hidden");
+    $imgEnCamino.classList.add("hidden");
+    $imgEntregado.classList.add("hidden");
+  }
 }
 
 function showImage(orderState) {
