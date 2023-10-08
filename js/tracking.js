@@ -57,5 +57,4 @@ function showImage(orderState) {
     $imgEnCamino.classList.add("hidden");
     $imgEntregado.classList.remove("hidden");
   }
-  console.log("JHoal");
 }
