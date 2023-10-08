@@ -22,7 +22,7 @@ class TrackingController {
       echo "Cliente: " . $result["cliente"] . "<br>";
       echo "Detalle de Orden: " . $result["detalle_de_orden"] . "<br>";
       echo "Fecha de Creación: " . $result["fecha_creacion"] . "<br>";
-      echo "Estado de Orden: " . $result["estado_de_orden"] . "<br>";
+      echo "<p>Estado de orden: <span id=\"estado-orden\">" . $result["estado_de_orden"] . "</span></p>";
     } else {
       // Si no se encontraron resultados, establece el mensaje de error
       echo "No se encontraron resultados para este N° de tracking.";
